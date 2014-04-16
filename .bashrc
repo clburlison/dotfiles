@@ -11,8 +11,9 @@
 #   1.  ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
-#   Set Paths
+#   Set custom paths
 #   ------------------------------------------------------------
+	export PATH=$HOME/bin:$PATH
 	export PATH=/usr/local/bin:$PATH
 	export PATH="/usr/local/packer:$PATH"
 	export PATH="~/Dropbox/Config/User/bin:$PATH"
