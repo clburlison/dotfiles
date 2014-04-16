@@ -15,7 +15,10 @@
 #   ------------------------------------------------------------
 	export ZSH=$HOME/.oh-my-zsh
 	source $HOME/.aliases
-
+	
+#   Set default vagrant provider
+#   ------------------------------------------------------------	
+	export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 #   Set name of the theme to load.
 #   ------------------------------------------------------------
