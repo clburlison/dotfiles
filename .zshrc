@@ -49,3 +49,7 @@
 	export PATH=/usr/local/bin:$PATH
 	export PATH="/usr/local/packer:$PATH"
 	export PATH="~/Dropbox/Config/User/bin:$PATH"
+	
+#   Make rake work in zsh
+#   ------------------------------------------------------------
+	alias rake='noglob rake'
