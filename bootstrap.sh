@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+# ==============================================================
+# This script is originally written by:
+# Mathias Bynens, https://github.com/mathiasbynens/dotfiles
+# ==============================================================
+
+
 cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 function doIt() {
