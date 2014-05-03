@@ -9,6 +9,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH="/usr/local/packer:$PATH"
 export PATH="~/Dropbox/Config/User/bin:$PATH"
+export PATH=/opt/boxen/repo/script:$PATH
 
 
 # Set Default Editor
@@ -27,3 +28,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+
+
+# Allow boxen to work in bash
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh

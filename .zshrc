@@ -64,17 +64,19 @@ else
   export EDITOR='mate'
 fi
 
-# Allow boxen to work in zsh
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
 # Set custom paths
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/Dropbox/Config/User/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/packer:$PATH
+export PATH=/usr/local/packer:$PATH
+export PATH=/opt/boxen/repo/script:$PATH
 
 # Make rake work in zsh
 alias rake='noglob rake'
 
 # Aliases files to be used between bash & zshrc
 source $HOME/.aliases
+
+# Allow boxen to work in zsh
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
