@@ -51,6 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Set default vagrant provider
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+alias vagrant_up="vagrant up --provider=virtualbox"
 
 #Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
