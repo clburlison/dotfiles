@@ -139,6 +139,12 @@ alias ping='ping -c 3'								# ping:			Stop after sending 3 packets
     alias finderShowHidden='defaults write com.apple.finder AppleShowAllFiles -bool TRUE; killall Finder'
     alias finderHideHidden='defaults write com.apple.finder AppleShowAllFiles -bool FALSE; killall Finder'
 
+#   desktopShow:   Show desktop icons
+#   desktopHide:   Hide desktop icons
+#   -------------------------------------------------------------------
+    alias desktopShow='defaults write com.apple.finder CreateDesktop -bool true; killall Finder'
+    alias desktopHide='defaults write com.apple.finder CreateDesktop -bool false; killall Finder'
+
 #   cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
 #   -----------------------------------------------------------------------------------
     alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
