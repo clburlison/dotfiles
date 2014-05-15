@@ -162,6 +162,7 @@ alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows ap
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:  Grabs headers from web page
 alias webup="sudo apachectl start"						# webup:		Starts local apache service
 alias webdown="sudo apachectl stop"						# webdown:		Stops local apache service
+alias webserver="python -m SimpleHTTPServer"			# webserver:	Simple webserver from the current directory
 
 
 #   ---------------------------------------
