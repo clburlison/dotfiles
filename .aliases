@@ -34,10 +34,11 @@ mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and ju
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
-alias fixpref='/usr/bin/killall -u $USER cfprefsd'				# Disables plist caching for ML& Mav so we can edit preference files
+alias fixpref='/usr/bin/killall -u $USER cfprefsd'			# Disables plist caching for ML& Mav so we can edit preference files
 alias "largest"="du -ck | sort -n | tail"					# Show largest file in current directory
-alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"			# Total disk usage for current folder
+alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"						# Total disk usage for current folder
 function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }	# view man pages in Preview
+alias autodmg="/Applications/AutoDMG.app/Contents/MacOS/AutoDMG"	# cli for AutoDMG app
 
 
 
