@@ -147,7 +147,13 @@ for app in Safari Finder Dock Mail SystemUIServer NotificationCenter; do killall
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
 # disable powernap issue with encrypted disk | more info http://derflounder.wordpress.com/2014/02/12/power-nap-power-management-settings-and-filevault-2/
-sudo pmset -a darkwakes 0
-sudo pmset -a standby 0
-sudo pmset -a standbydelay 0
-sudo pmset -a destroyfvkeyonstandby 1 hibernatemode 25
+# sudo pmset -a darkwakes 0
+# sudo pmset -a standby 0
+# sudo pmset -a standbydelay 0
+# sudo pmset -a destroyfvkeyonstandby 1 hibernatemode 25
+
+
+# Quick Look plugins | more info https://github.com/sindresorhus/quick-look-plugins
+brew tap caskroom/cask
+brew install brew-cask
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql suspicious-package
