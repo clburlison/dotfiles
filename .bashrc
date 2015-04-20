@@ -10,6 +10,9 @@ export PATH=/usr/local/bin:$PATH
 export PATH="/usr/local/packer:$PATH"
 export PATH="~/Dropbox/Config/User/bin:$PATH"
 export PATH=/opt/boxen/repo/script:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home)
+export DERBY_HOME="$JAVA_HOME/db"
+export CLASSPATH="${DERBY_HOME}/lib/derby.jar:${DERBY_HOME}/lib/derbytools.jar:"
 
 
 # Set Default Editor
