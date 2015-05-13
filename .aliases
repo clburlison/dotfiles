@@ -24,6 +24,7 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlhp'                        # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 alias pwd='pwd -P'													# Preferred 'pwd' implementation
+alias g='git'																# Preferred 'git' implementation
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
 alias c='clear'                             # c:            Clear terminal display
 alias j='java'                              # j:            Run a java program
@@ -43,6 +44,10 @@ alias "largest"="du -ck | sort -n | tail"								# Show largest file in current 
 alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"										# Total disk usage for current folder
 function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }	# view man pages in Preview
 alias autodmg="/Applications/AutoDMG.app/Contents/MacOS/AutoDMG"											# cli for AutoDMG app
+alias vagrant_up="vagrant up --provider=virtualbox"			# Alternative vagrant provider
+alias sudo='sudo '													# Enable aliases to be sudo’ed
+alias week='date +%V'												# Get week number
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'			# Stopwatch
 
 
 
@@ -154,6 +159,9 @@ alias ping='ping -c 3'								# ping:			Stop after sending 3 packets
 #   -----------------------------------------------------------------------------------
     alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
+# Get OS X Software Updates, Homebrew, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; sudo gem update --system; sudo gem update'
+
 
 #   ---------------------------------------
 #   6.  WEB DEVELOPMENT
@@ -175,3 +183,4 @@ alias webserver="python -m SimpleHTTPServer"			# webserver:	Simple webserver fro
 #   ---------------------------------------
 
 # Much of this profile was copied from http://natelandau.com/my-mac-osx-bash_profile/
+# Additional awesomeness https://github.com/mathiasbynens/dotfiles

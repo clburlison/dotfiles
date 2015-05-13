@@ -4,30 +4,17 @@
 #
 #  ---------------------------------------------------------------------------
 
-# Set custom paths
-export PATH=$HOME/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH="/usr/local/packer:$PATH"
-export PATH="~/Dropbox/Config/User/bin:$PATH"
-export PATH=/opt/boxen/repo/script:$PATH
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
 
-# Set Default Editor
-# export EDITOR=/usr/bin/nano
-export EDITOR="/usr/local/bin/mate -w"	
-    
-#   Set default blocksize for ls, df, du: http://hints.macworld.com/comment.php?mode=view&cid=24491
-export BLOCKSIZE=1k
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # Add color to terminal from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-	
-	
-# Set bash to use .aliases files
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-
-# Allow boxen to work in bash
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
