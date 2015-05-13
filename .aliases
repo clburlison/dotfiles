@@ -170,7 +170,6 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew c
 #   -----------------------------------------------------------------------------------
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-
 #   ---------------------------------------
 #   6.  WEB DEVELOPMENT
 #   ---------------------------------------
