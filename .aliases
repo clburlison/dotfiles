@@ -134,7 +134,6 @@ alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on 
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
 alias ping='ping -c 3'															# ping:			Stop after sending 3 packets
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"         # flush:     Flush out the DNS Cache
 
 
 #   ---------------------------------------
