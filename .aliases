@@ -30,7 +30,6 @@ alias c='clear'                             # c:            Clear terminal displ
 alias j='java'                              # j:            Run a java program
 alias jc='javac'                            # jc:           Compiles a java program
 alias jca='javac *.java'                    # jca:          Compiles all java programs in current directory 
-alias which='type -all'                     # which:        Find executables
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 alias show_options='shopt'                  # Show_options: display bash options settings
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
