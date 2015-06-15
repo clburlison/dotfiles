@@ -103,7 +103,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.dock launchanim -bool false
 
 # Disable Apple Notification Center
-sudo defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false; sudo -k
+# sudo defaults write /System/Library/LaunchAgents/com.apple.notificationcenterui KeepAlive -bool false; sudo -k
 
 # Enable iTunes track notifications in the Dock
 # defaults write com.apple.dock itunes-notifications -bool true
@@ -146,6 +146,9 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 for app in Safari Finder Dock Mail SystemUIServer NotificationCenter; do killall "$app" > /dev/null 2>&1; done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
+# Install HomeBrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install wget curl tree
 
 # Quick Look plugins | more info https://github.com/sindresorhus/quick-look-plugins
 brew tap caskroom/cask
