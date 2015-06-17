@@ -45,10 +45,12 @@ function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps"
 alias autodmg="/Applications/AutoDMG.app/Contents/MacOS/AutoDMG"											# cli for AutoDMG app
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'			# Stopwatch
 alias vagrant_up="vagrant up --provider=virtualbox"			# Alternative vagrant provider
+alias lint="puppet-lint --no-autoloader_layout-check ." # Default puppet lint implementation 
 alias sudo='sudo '													# Enable aliases to be sudo’ed
 alias week='date +%V'												# Get week number
 alias spotoff="sudo mdutil -a -i off"				# Disable Spotlight
 alias spoton="sudo mdutil -a -i on"					# Enable Spotlight
+
 
 
 
