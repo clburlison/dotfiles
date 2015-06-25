@@ -157,3 +157,13 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[credential]
+helper = osxkeychain
+
+[user]
+name = Clayton Burlison
+email = clburlison@gmail.com
+
+[push]
+default = simple

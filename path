@@ -1,0 +1,13 @@
+#  ---------------------------------------------------------------------------
+#
+#  Description:  This file holds all my paths for varying shells
+#
+#  ---------------------------------------------------------------------------
+
+# Set custom paths
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/Dropbox/Config/User/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/packer:$PATH
+export PATH=/opt/vagrant/bin:$PATH
+# export PATH=/opt/boxen/repo/script:$PATH

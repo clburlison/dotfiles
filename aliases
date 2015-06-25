@@ -34,14 +34,10 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 alias show_options='shopt'                  # Show_options: display bash options settings
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
 alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
-mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
-trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
-ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 alias fixpref='/usr/bin/killall -u $USER cfprefsd'			# Disables plist caching for ML& Mav so we can edit preference files
 alias "largest"="du -ck | sort -n | tail"								# Show largest file in current directory
 alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"										# Total disk usage for current folder
-function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }	# view man pages in Preview
 alias autodmg="/Applications/AutoDMG.app/Contents/MacOS/AutoDMG"											# cli for AutoDMG app
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'			# Stopwatch
 alias vagrant_up="vagrant up --provider=virtualbox"			# Alternative vagrant provider
@@ -50,76 +46,25 @@ alias sudo='sudo '													# Enable aliases to be sudo’ed
 alias week='date +%V'												# Get week number
 alias spotoff="sudo mdutil -a -i off"				# Disable Spotlight
 alias spoton="sudo mdutil -a -i on"					# Enable Spotlight
-
-
+alias hosts="mate ~/Dropbox/Config/System/etc/hosts; sudo puppet apply"
+alias prun="sudo /usr/local/bin/puppet_run.py"
 
 
 #   -------------------------------
 #   2.  FILE AND FOLDER MANAGEMENT
 #   -------------------------------
 
-zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
 alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
 alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1mb size (all zeros)
 alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 
 
-#   cdf:  'Cd's to frontmost window of MacOS Finder
-#   ------------------------------------------------------
-    cdf () {
-        currFolderPath=$( /usr/bin/osascript <<"    EOT"
-            tell application "Finder"
-                try
-            set currFolder to (folder of the front window as alias)
-                on error
-            set currFolder to (path to desktop folder as alias)
-                end try
-                POSIX path of currFolder
-            end tell
-        EOT
-        )
-        echo "cd to \"$currFolderPath\""
-        cd "$currFolderPath"
-    }
-
-#   extract:  Extract most know archives with one command
-#   ---------------------------------------------------------
-    extract () {
-        if [ -f $1 ] ; then
-          case $1 in
-            *.tar.bz2)   tar xjf $1     ;;
-            *.tar.gz)    tar xzf $1     ;;
-            *.bz2)       bunzip2 $1     ;;
-            *.rar)       unrar e $1     ;;
-            *.gz)        gunzip $1      ;;
-            *.tar)       tar xf $1      ;;
-            *.tbz2)      tar xjf $1     ;;
-            *.tgz)       tar xzf $1     ;;
-            *.zip)       unzip $1       ;;
-            *.Z)         uncompress $1  ;;
-            *.7z)        7z x $1        ;;
-            *)     echo "'$1' cannot be extracted via extract()" ;;
-             esac
-         else
-             echo "'$1' is not a valid file"
-         fi
-    }
-
-
-
-#   ---------------------------
-#   3.  SEARCHING
-#   ---------------------------
+#   ----------------------------------------
+#   3.  SEARCHING -- More under ./functions
+#   ----------------------------------------
 
 alias qfind="find . -name "                 # qfind:    Quickly search for file
-ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
-ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
-ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
-
-#   spotlight: Search for a file using MacOS Spotlight's metadata
-#   -----------------------------------------------------------
-    spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
 
 
 #   ---------------------------

@@ -4,27 +4,22 @@
 #
 #  ---------------------------------------------------------------------------
 
-# Set custom paths
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/Dropbox/Config/User/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/packer:$PATH
-# export PATH=/opt/boxen/repo/script:$PATH
-export PATH=/opt/vagrant/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/db/bin:$PATH
-export DERBY_HOME="$JAVA_HOME/db"
-export CLASSPATH="${DERBY_HOME}/lib/derby.jar:${DERBY_HOME}/lib/derbytools.jar:"
+# Java exports
+if [ -f /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+  export PATH=$JAVA_HOME/db/bin:$PATH
+  export DERBY_HOME="$JAVA_HOME/db"
+  export CLASSPATH="${DERBY_HOME}/lib/derby.jar:${DERBY_HOME}/lib/derbytools.jar:"
+fi
 
 # Set Default Editor
-# export EDITOR=/usr/bin/nano
-export EDITOR="/usr/local/bin/mate -w"	
+export EDITOR="/usr/local/bin/mate -w"
     
 # Set default blocksize for ls, df, du: http://hints.macworld.com/comment.php?mode=view&cid=24491
 export BLOCKSIZE=1k
 
 # Allow boxen to work
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # Set default vagrant provider
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
