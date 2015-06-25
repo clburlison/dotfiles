@@ -46,7 +46,7 @@ alias sudo='sudo '													# Enable aliases to be sudo’ed
 alias week='date +%V'												# Get week number
 alias spotoff="sudo mdutil -a -i off"				# Disable Spotlight
 alias spoton="sudo mdutil -a -i on"					# Enable Spotlight
-alias hosts="mate ~/Dropbox/Config/System/etc/hosts; sudo puppet apply"
+alias hosts="mate ~/Dropbox/Config/System/etc/hosts"
 alias prun="sudo /usr/local/bin/puppet_run.py"
 
 
