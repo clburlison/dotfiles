@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Ask for the administrator password upfront
-sudo -v
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -11,7 +8,7 @@ sudo -v
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # Menu bar: hide the Time Machine, and Bluetooth icons
-defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu" "/System/Library/CoreServices/Menu Extras/VPN.menu"
 
 # Show remaining battery percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
@@ -61,7 +58,8 @@ defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # Enable HiDPI display modes (requires restart)
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+# Need to try and do this through puppet
+# sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
 # Finder/Dock                                                                 #
@@ -193,12 +191,13 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 # Enable Xcode build timing
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool true
 
-# Set my account picture
-sudo cp -f ~/.dotfiles/me.jpg "/Library/User Pictures/clburlison.jpg"
-sudo chmod 444 "/Library/User Pictures/clburlison.jpg"
-sudo dscl . delete /Users/${USER} jpegphoto
-sudo dscl . delete /Users/${USER} Picture
-sudo dscl . create /Users/${USER} Picture "/Library/User Pictures/clburlison.jpg"
+# Set my account picture 
+# Need to try and do this through puppet
+# sudo cp -f ~/.dotfiles/me.jpg "/Library/User Pictures/clburlison.jpg"
+# sudo chmod 444 "/Library/User Pictures/clburlison.jpg"
+# sudo dscl . delete /Users/${USER} jpegphoto
+# sudo dscl . delete /Users/${USER} Picture
+# sudo dscl . create /Users/${USER} Picture "/Library/User Pictures/clburlison.jpg"
 
 
 ###############################################################################
@@ -232,5 +231,5 @@ done
 ###############################################################################
 for app in "Dock" "Finder" "Mail" "Safari" "NotificationCenter" "iTunes" "SystemUIServer" "cfprefsd"; do
   echo "Killing $app, do not be alarmed"
-  sudo killall "$app" > /dev/null 2>&1
+  killall "$app" > /dev/null 2>&1
 done
