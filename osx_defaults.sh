@@ -205,7 +205,7 @@ defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool true
 ###############################################################################
 if ! hash brew >/dev/null 2>&1; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  declare -a arr=("wget" "curl" "tree")
+  declare -a arr=("wget" "curl" "tree" "dfu-programmer" "pv" "awscli")
   for i in "${arr[@]}"
   do
      brew install "$i"
