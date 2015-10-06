@@ -15,3 +15,4 @@ unset file;
 # Add color to terminal from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
