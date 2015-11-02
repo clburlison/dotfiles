@@ -5,12 +5,12 @@
 #  ---------------------------------------------------------------------------
 
 # Java exports
-if [ -f /usr/libexec/java_home ]; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
-  export PATH=$JAVA_HOME/db/bin:$PATH
-  export DERBY_HOME="$JAVA_HOME/db"
-  export CLASSPATH="${DERBY_HOME}/lib/derby.jar:${DERBY_HOME}/lib/derbytools.jar:"
-fi
+#if [ -f /usr/libexec/java_home ]; then
+#  export JAVA_HOME=$(/usr/libexec/java_home)
+#  export PATH=$JAVA_HOME/db/bin:$PATH
+#  export DERBY_HOME="$JAVA_HOME/db"
+#  export CLASSPATH="${DERBY_HOME}/lib/derby.jar:${DERBY_HOME}/lib/derbytools.jar:"
+#fi
 
 # Set Default Editor
 export EDITOR="/usr/local/bin/mate -w"
