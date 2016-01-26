@@ -40,7 +40,7 @@ alias "largest"="du -ck | sort -n | tail"								# Show largest file in current 
 alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"										# Total disk usage for current folder
 alias autodmg="/Applications/AutoDMG.app/Contents/MacOS/AutoDMG"											# cli for AutoDMG app
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'			# Stopwatch
-alias vagrant_up="vagrant up --provider=virtualbox"			# Alternative vagrant provider
+alias vagrant_up="vagrant up --provider=virtualbox"     # Alternative vagrant provider
 alias lint="puppet-lint --no-autoloader_layout-check ." # Default puppet lint implementation 
 alias sudo='sudo '													# Enable aliases to be sudo’ed
 alias week='date +%V'												# Get week number
@@ -50,6 +50,26 @@ alias hosts="mate ~/Dropbox/Config/System/etc/hosts"
 alias prun="sudo /usr/local/bin/puppet_run.py"
 alias livestreamer="livestreamer --player-passthrough=hls"
 
+
+# Docker aliases
+alias dm='docker-machine'
+alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias docker-kill='docker kill `docker ps -q`'
+alias docker-rm='docker rm `docker ps -a -q`'
+alias docker-rmi='docker rmi `docker images -f "dangling=true" -q`'
+alias docker-rmi-all='docker rmi -f `docker images -q`'
+alias docker-rmi-none="docker images | gsed 's/\s\+/ /g' | grep '<none>' | cut -d ' ' -f 3 | xargs docker rmi"
+alias docker-clean='dkill && drm'
+function docker-rmr() {
+  docker images | grep $1 | gsed 's/\s\+/ /g' | cut -d " " -f 1-2 | gsed 's/\s/:/' | xargs docker rmi
+}
+function docker-env() {
+  if [[ -z "$DOCKER_HOST" ]]; then
+    eval $(docker-machine env dev)
+  fi
+  \docker $@
+}
+alias docker=docker-env
 
 #   -------------------------------
 #   2.  FILE AND FOLDER MANAGEMENT
@@ -129,6 +149,8 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:  Grabs he
 alias webup="sudo apachectl start"						# webup:		Starts local apache service
 alias webdown="sudo apachectl stop"						# webdown:		Stops local apache service
 alias webserver="python -m SimpleHTTPServer"			# webserver:	Simple webserver from the current directory
+
+
 
 
 #   ---------------------------------------
