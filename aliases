@@ -49,6 +49,7 @@ alias spoton="sudo mdutil -a -i on"					# Enable Spotlight
 alias hosts="mate ~/Dropbox/Config/System/etc/hosts"
 alias prun="sudo /usr/local/bin/puppet_run.py"
 alias livestreamer="livestreamer --player-passthrough=hls"
+alias silversearcher="/usr/local/bin/ag"
 
 
 # Docker aliases

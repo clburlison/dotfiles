@@ -14,3 +14,4 @@ export PATH=/usr/local/packer:$PATH
 export PATH=/opt/vagrant/bin:$PATH
 # export PATH=/opt/boxen/repo/script:$PATH
 export PATH=/opt/puppetlabs/puppet/bin:$PATH
+export PATH=/Library/PostgreSQL/9.5/bin:$PATH
