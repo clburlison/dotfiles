@@ -50,6 +50,8 @@ alias hosts="mate ~/Dropbox/Config/System/etc/hosts"
 alias prun="sudo /usr/local/bin/puppet_run.py"
 alias livestreamer="livestreamer --player-passthrough=hls"
 alias silversearcher="/usr/local/bin/ag"
+alias build="xcodebuild -configuration Release"
+alias rr="/Applications/Recipe\ Robot.app/Contents/Resources/scripts/recipe-robot"
 
 
 # Docker aliases
@@ -64,13 +66,13 @@ alias docker-clean='dkill && drm'
 function docker-rmr() {
   docker images | grep $1 | gsed 's/\s\+/ /g' | cut -d " " -f 1-2 | gsed 's/\s/:/' | xargs docker rmi
 }
-function docker-env() {
-  if [[ -z "$DOCKER_HOST" ]]; then
-    eval $(docker-machine env dev)
-  fi
-  \docker $@
-}
-alias docker=docker-env
+# function docker-env() {
+#   if [[ -z "$DOCKER_HOST" ]]; then
+#     eval $(docker-machine env dev)
+#   fi
+#   \docker $@
+# }
+# alias docker=docker-env
 
 #   -------------------------------
 #   2.  FILE AND FOLDER MANAGEMENT

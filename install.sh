@@ -19,10 +19,10 @@ fi
 ln -sF ${HOME}/.dotfiles/oh-my-zsh/custom/themes/clburlison.zsh-theme ${HOME}/.oh-my-zsh/custom/themes >/dev/null 2>&1
 
 # If running on a Mac, set-up Mac defaults..
-if uname | grep -q Darwin; then
-  echo "Running on a Mac, setting Mac defaults"
-  ${HOME}/.dotfiles/osx_defaults.sh
-fi
+# if uname | grep -q Darwin; then
+#   echo "Running on a Mac, setting Mac defaults"
+#   ${HOME}/.dotfiles/osx_defaults.sh
+# fi
 
 echo "*****"
 echo "Complete"

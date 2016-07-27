@@ -27,8 +27,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git ruby jump textmate du)
+plugins=(git ruby jump textmate vagrant bundler osx)
 
 # Make rake work in zsh
 alias rake='noglob rake'
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -162,8 +162,13 @@
 helper = osxkeychain
 
 [user]
-name = Clayton Burlison
-email = clburlison@gmail.com
+	name = Clayton Burlison
+	email = github@clburlison.com
+	signingkey = ED91CD4E
 
 [push]
-default = simple
+	default = simple
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f

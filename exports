@@ -13,7 +13,7 @@
 #fi
 
 # Set Default Editor
-export EDITOR="/usr/local/bin/mate -w"
+export EDITOR="~/bin/mate"
     
 # Set default blocksize for ls, df, du: http://hints.macworld.com/comment.php?mode=view&cid=24491
 export BLOCKSIZE=1k
@@ -30,3 +30,6 @@ export LC_ALL='en_US.UTF-8';
 
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
+
+# Go path for packages
+export GOPATH=$HOME/bin/go
