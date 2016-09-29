@@ -18,3 +18,4 @@ export PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
 export PATH=/Library/PostgreSQL/9.5/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=/usr/libexec:$PATH
+export PATH=$HOME/.composer/vendor/bin:$PATH

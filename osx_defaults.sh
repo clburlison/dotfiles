@@ -191,7 +191,7 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 # Enable Xcode build timing
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool true
 
-# Set my account picture 
+# Set my account picture
 # Need to try and do this through puppet
 # sudo cp -f ~/.dotfiles/me.jpg "/Library/User Pictures/clburlison.jpg"
 # sudo chmod 444 "/Library/User Pictures/clburlison.jpg"
@@ -205,7 +205,7 @@ defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool true
 ###############################################################################
 if ! hash brew >/dev/null 2>&1; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  declare -a arr=("wget" "curl" "tree" "dfu-programmer" "pv" "awscli" "s3fs")
+  declare -a arr=("the_silver_searcher" "wget" "curl" "tree" "dfu-programmer" "pv" "awscli" "s3fs" "s3cmd" "mercurial" "youtube-dl")
   for i in "${arr[@]}"
   do
      brew install "$i"
