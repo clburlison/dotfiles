@@ -15,6 +15,6 @@ Some things from [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) & [
 
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
-and then you change your shell to zsh
+And then you change your shell to zsh
 
     chsh -s `which zsh`
