@@ -30,10 +30,20 @@
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
-	<real>2.04</real>
+	<real>2.0499999999999998</real>
+	<key>ShouldRestoreContent</key>
+	<false/>
+	<key>ShowActiveProcessInTabTitle</key>
+	<true/>
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
+	<key>ShowActivityIndicatorInTab</key>
+	<true/>
 	<key>ShowDimensionsInTitle</key>
+	<false/>
+	<key>ShowRepresentedURLInTabTitle</key>
+	<true/>
+	<key>ShowRepresentedURLInTitle</key>
 	<false/>
 	<key>TextBoldColor</key>
 	<data>
