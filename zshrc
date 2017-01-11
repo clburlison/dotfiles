@@ -32,3 +32,6 @@ plugins=(git ruby jump textmate vagrant bundler osx)
 # Make rake work in zsh
 alias rake='noglob rake'
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /Users/clburlison/.travis/travis.sh ] && source /Users/clburlison/.travis/travis.sh

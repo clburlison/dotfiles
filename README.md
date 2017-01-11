@@ -6,6 +6,11 @@ These are my dotfiles.
 
 Some things from [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) & [Russel Hancox](https://github.com/russellhancox/dotfiles), & [jzelinskie](https://github.com/jzelinskie/dotfiles/blob/b2d33f8c601d1b7d9cce1df3319561e182251a26/zshrc#L12-L30)
 
+### On macOS
+
+Install oh-my-zsh
+
+     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ### On Ubuntu
 
