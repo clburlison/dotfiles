@@ -21,3 +21,4 @@ export PATH=/usr/libexec:$PATH
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/Applications/VMware\ Fusion.app/Contents/Library:$PATH
+export PATH=$GOPATH/$GOPATH/bin:$PATH
