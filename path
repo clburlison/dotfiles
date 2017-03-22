@@ -6,19 +6,18 @@
 
 # Set custom paths
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
 export PATH=$HOME/Dropbox/Config/User/bin:$PATH
 export PATH=$HOME/Dropbox/Config/User/bin/google-cloud-sdk/bin:$PATH
-export PATH=/usr/local/packer:$PATH
-export PATH=/opt/vagrant/bin:$PATH
+#export PATH=/usr/local/packer:$PATH
+#export PATH=/opt/vagrant/bin:$PATH
+export PATH=$HOME/Library/Python/2.7/bin:$PATH
 # export PATH=/opt/boxen/repo/script:$PATH
 # export PATH=/opt/puppetlabs/puppet/bin:$PATH
-export PATH=$HOME/.gem/ruby/2.0.0/bin:$PATH
-export PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
 export PATH=/Library/PostgreSQL/9.5/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=/usr/libexec:$PATH
-export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/Applications/VMware\ Fusion.app/Contents/Library:$PATH
 export PATH=$HOME/bin/go/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.0.0/bin:$PATH

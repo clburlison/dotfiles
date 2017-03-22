@@ -1,6 +1,9 @@
 " Use the Solarized Dark theme
 set background=dark
 
+" Remap two semicolons to the escape key
+:imap ;; <Esc>
+
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
