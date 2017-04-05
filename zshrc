@@ -15,6 +15,9 @@ unset file;
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
+# Use our zsh custom directory
+ZSH_CUSTOM=$HOME/Dropbox/src/mine/dotfiles/oh-my-zsh/custom
+
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
 
@@ -22,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git ruby jump textmate vagrant bundler osx knife)
+plugins=(bundler git ruby jump textmate vagrant ssh-agent osx knife)
 
 # Make rake work in zsh
 alias rake='noglob rake'

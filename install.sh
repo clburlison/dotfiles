@@ -12,12 +12,6 @@ for f in ${LIST}; do
       ln -s ${HOME}/.dotfiles/${f} ${HOME}/.${f} >/dev/null 2>&1
 done
 
-echo "Link zsh theme..."
-if [ ! -f ${HOME}/.oh-my-zsh/custom/themes ]; then
-  mkdir -p ${HOME}/.oh-my-zsh/custom/themes
-fi
-ln -sF ${HOME}/.dotfiles/oh-my-zsh/custom/themes/clburlison.zsh-theme ${HOME}/.oh-my-zsh/custom/themes >/dev/null 2>&1
-
 # If running on a Mac, set-up Mac defaults..
 # if uname | grep -q Darwin; then
 #   echo "Running on a Mac, setting Mac defaults"
