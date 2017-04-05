@@ -5,7 +5,7 @@ if ! hash git >/dev/null 2>&1; then
 fi
 
 echo "Creating symlinks..."
-EXCLUDE="install.sh README.md Clayton.terminal me.jpg osx_defaults.sh oh-my-zsh"
+EXCLUDE="install.sh README.md Clayton.terminal Solarized\ Dark.terminal me.jpg osx_defaults.sh oh-my-zsh"
 LIST=$(ls ${HOME}/.dotfiles)
 for f in ${LIST}; do
   echo "${EXCLUDE}" | grep -q ${f} || \

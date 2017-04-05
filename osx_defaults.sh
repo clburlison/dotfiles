@@ -164,11 +164,11 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use my theme by default in Terminal.app
-open "$HOME/.dotfiles/Clayton.terminal"
+open "$HOME/.dotfiles/Solarized Dark.terminal"
 
 sleep 2 # Wait a bit to make sure the theme is loaded
-defaults write com.apple.terminal "Default Window Settings" -string "Clayton"
-defaults write com.apple.terminal "Startup Window Settings" -string "Clayton"
+defaults write com.apple.terminal "Default Window Settings" -string "Solarized Dark"
+defaults write com.apple.terminal "Startup Window Settings" -string "Solarized Dark"
 
 
 ###############################################################################

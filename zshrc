@@ -16,12 +16,7 @@ unset file;
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-if [ -f ~/.oh-my-zsh/custom/themes/clburlison.zsh-theme ]; then
-	ZSH_THEME="clburlison"
-else
-	ZSH_THEME="robbyrussell"
-fi
+ZSH_THEME="agnoster"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -33,5 +28,8 @@ plugins=(git ruby jump textmate vagrant bundler osx knife)
 alias rake='noglob rake'
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# Add my default username
+DEFAULT_USER='clburlison'
+
 # added by travis gem
-[ -f /Users/clburlison/.travis/travis.sh ] && source /Users/clburlison/.travis/travis.sh
+#[ -f /Users/clburlison/.travis/travis.sh ] && source /Users/clburlison/.travis/travis.sh
