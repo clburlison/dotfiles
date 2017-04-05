@@ -21,3 +21,4 @@ export PATH=/Applications/VMware\ Fusion.app/Contents/Library:$PATH
 export PATH=$HOME/bin/go/bin:$PATH
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.0.0/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
