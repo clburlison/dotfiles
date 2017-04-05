@@ -32,4 +32,5 @@ export LC_ALL='en_US.UTF-8';
 export HISTCONTROL='ignoreboth';
 
 # Go path for packages
-export GOPATH=$HOME/bin/go
+export GOPATH=$HOME/Dropbox/src/go
+export PATH=$GOPATH/bin:$PATH
