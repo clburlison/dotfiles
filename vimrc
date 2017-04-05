@@ -1,10 +1,6 @@
 " Use the Solarized Dark theme
 set background=dark
 
-" Add a subtle red if the length goes over 80 chars - http://stackoverflow.com/a/235970
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
 " Remap two semicolons to the escape key
 :imap ;; <Esc>
 
