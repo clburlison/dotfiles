@@ -15,9 +15,6 @@ unset file;
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-# Use our zsh custom directory
-ZSH_CUSTOM=$HOME/Dropbox/src/mine/dotfiles/oh-my-zsh/custom
-
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
 

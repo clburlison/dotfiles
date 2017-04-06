@@ -2,24 +2,18 @@
 
 These are my dotfiles.
 
-## Notes
+I now use [Mackup](https://github.com/lra/mackup) to store my configurations between machines including these dotfiles. I will continue to keep this repo updated for reference purposes in case anyone wants to take a look.
 
-Some things from [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) & [Russel Hancox](https://github.com/russellhancox/dotfiles), & [jzelinskie](https://github.com/jzelinskie/dotfiles/blob/b2d33f8c601d1b7d9cce1df3319561e182251a26/zshrc#L12-L30)
 
-### On macOS
-
-Install oh-my-zsh
-
-     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-### On Ubuntu
-
-    apt install zsh
-    apt install git-core
-    apt install wget
-
-    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+# Mackup usage steps
+These are mostly for Clayton's memory...
+* Install Dropbox
+* Install python3 (currently Mackup has a py2 incompatibility issue).
+* `pip3 install --upgrade mackup --user`
+* `~/Library/Python/3.6/bin/mackup restore`
 
 And then you change your shell to zsh
 
     chsh -s `which zsh`
+
+Eventually `osx_defaults.sh` will get replaced with chef or puppet config....some day.
