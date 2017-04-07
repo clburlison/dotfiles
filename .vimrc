@@ -4,6 +4,9 @@ set background=dark
 " Remap two semicolons to the escape key
 :imap ;; <Esc>
 
+" Enabled pathogen plugin manager
+execute pathogen#infect()
+
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -84,6 +87,9 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
+" Indent smart
+filetype indent plugin on
 
 " Automatic commands
 if has("autocmd")
