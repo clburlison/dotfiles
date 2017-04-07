@@ -52,7 +52,7 @@ alias livestreamer="livestreamer --player-passthrough=hls"
 alias silversearcher="/usr/local/bin/ag"
 alias build="xcodebuild -configuration Release"
 alias rr="/Applications/Recipe\ Robot.app/Contents/Resources/scripts/recipe-robot"
-
+alias vim="/usr/local/bin/vim"
 
 # Docker aliases
 alias dm='docker-machine'
