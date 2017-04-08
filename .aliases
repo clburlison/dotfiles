@@ -53,6 +53,7 @@ alias silversearcher="/usr/local/bin/ag"
 alias build="xcodebuild -configuration Release"
 alias rr="/Applications/Recipe\ Robot.app/Contents/Resources/scripts/recipe-robot"
 alias vim="/usr/local/bin/vim"
+alias v="vim"
 
 # Docker aliases
 alias dm='docker-machine'
