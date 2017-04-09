@@ -1,5 +1,6 @@
 " Use the Solarized Dark theme
 set background=dark
+colorscheme solarized
 
 " Remap two semicolons to the escape key
 :imap ;; <Esc>
@@ -23,7 +24,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8', 'pycodestyle']
 
-
+" Change text color on misspelt words so we can see with our dark theme
+hi SpellBad ctermfg=000 guifg=#000000
+" hi SpellBad    ctermfg=015      ctermbg=000     cterm=none      guifg=#FFFFFF   guibg=#000000   gui=none
 
 
 " Make Vim more useful
