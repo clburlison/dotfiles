@@ -10,6 +10,9 @@ for i in ${dotfiles[@]}; do
 	cp -r ~/Dropbox/Mackup/${i} .
 done
 
+# Remove the following dirs as they don't need to be in git
+rm -rf {.vim/plugins,.vim/backups,.vim/swaps,.vim/undo}
+
 echo ""
 echo "*************"
 echo "Copy complete"

@@ -23,8 +23,8 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlhp'                        # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
-alias pwd='pwd -P'													# Preferred 'pwd' implementation
-alias g='git'																# Preferred 'git' implementation
+alias pwd='pwd -P'                          # Preferred 'pwd' implementation
+alias g='git'                               # Preferred 'git' implementation
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
 alias c='clear'                             # c:            Clear terminal display
 alias j='java'                              # j:            Run a java program
@@ -35,45 +35,29 @@ alias show_options='shopt'                  # Show_options: display bash options
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
 alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
-alias fixpref='/usr/bin/killall -u $USER cfprefsd'			# Disables plist caching for ML& Mav so we can edit preference files
-alias "largest"="du -ck | sort -n | tail"								# Show largest file in current directory
-alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"										# Total disk usage for current folder
-alias autodmg="/Applications/AutoDMG.app/Contents/MacOS/AutoDMG"											# cli for AutoDMG app
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'			# Stopwatch
-alias vagrant_up="vagrant up --provider=virtualbox"     # Alternative vagrant provider
-alias lint="puppet-lint --no-autoloader_layout-check ." # Default puppet lint implementation 
-alias sudo='sudo '													# Enable aliases to be sudo’ed
-alias week='date +%V'												# Get week number
-alias spotoff="sudo mdutil -a -i off"				# Disable Spotlight
-alias spoton="sudo mdutil -a -i on"					# Enable Spotlight
-alias hosts="mate ~/Dropbox/Config/System/etc/hosts"
-alias prun="sudo /usr/local/bin/puppet_run.py"
+alias "largest"="du -ck | sort -n | tail"   # Show largest file in current directory
+alias sudo='sudo '                          # Enable aliases to be sudo’ed
+alias week='date +%V'                       # Get week number
+alias spotoff="sudo mdutil -a -i off"       # Disable Spotlight
+alias spoton="sudo mdutil -a -i on"         #  Enable Spotlight
 alias livestreamer="livestreamer --player-passthrough=hls"
-alias silversearcher="/usr/local/bin/ag"
 alias build="xcodebuild -configuration Release"
 alias rr="/Applications/Recipe\ Robot.app/Contents/Resources/scripts/recipe-robot"
 alias vim="/usr/local/bin/vim"
+alias vi="vim"
 alias v="vim"
 
 # Docker aliases
-alias dm='docker-machine'
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-kill='docker kill `docker ps -q`'
 alias docker-rm='docker rm `docker ps -a -q`'
 alias docker-rmi='docker rmi `docker images -f "dangling=true" -q`'
 alias docker-rmi-all='docker rmi -f `docker images -q`'
 alias docker-rmi-none="docker images | gsed 's/\s\+/ /g' | grep '<none>' | cut -d ' ' -f 3 | xargs docker rmi"
-alias docker-clean='dkill && drm'
 function docker-rmr() {
   docker images | grep $1 | gsed 's/\s\+/ /g' | cut -d " " -f 1-2 | gsed 's/\s/:/' | xargs docker rmi
 }
-# function docker-env() {
-#   if [[ -z "$DOCKER_HOST" ]]; then
-#     eval $(docker-machine env dev)
-#   fi
-#   \docker $@
-# }
-# alias docker=docker-env
+
 
 #   -------------------------------
 #   2.  FILE AND FOLDER MANAGEMENT
@@ -96,7 +80,6 @@ alias qfind="find . -name "                 # qfind:    Quickly search for file
 #   4.  NETWORKING
 #   ---------------------------
 
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
 alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
 alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
 alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
@@ -105,7 +88,7 @@ alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on 
 alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
-alias ping='ping -c 3'															# ping:			Stop after sending 3 packets
+alias ping='ping -c 3'                              # ping:         Stop after sending 3 packets
 
 
 #   ---------------------------------------
@@ -114,7 +97,7 @@ alias ping='ping -c 3'															# ping:			Stop after sending 3 packets
 
 #   cleanupDS:  Recursively delete .DS_Store files
 #   -------------------------------------------------------------------
-	alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
 #   finderShowHidden:   Show hidden files in Finder
 #   finderHideHidden:   Hide hidden files in Finder
@@ -130,7 +113,7 @@ alias ping='ping -c 3'															# ping:			Stop after sending 3 packets
 
 #   cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
 #   -----------------------------------------------------------------------------------
-    alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 #   update:  # Get OS X Software Updates, Homebrew, and their installed packages
 #   -----------------------------------------------------------------------------------
@@ -139,22 +122,6 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew c
 #   afk:  # Lock the screen (when going AFK)
 #   -----------------------------------------------------------------------------------
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-#   ---------------------------------------
-#   6.  WEB DEVELOPMENT
-#   ---------------------------------------
-
-alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
-alias apacheRestart='sudo apachectl graceful'           # apacheRestart:    Restart Apache
-alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
-alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
-alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
-httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:  Grabs headers from web page
-alias webup="sudo apachectl start"						# webup:		Starts local apache service
-alias webdown="sudo apachectl stop"						# webdown:		Stops local apache service
-alias webserver="python -m SimpleHTTPServer"			# webserver:	Simple webserver from the current directory
-
-
 
 
 #   ---------------------------------------

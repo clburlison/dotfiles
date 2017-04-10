@@ -12,8 +12,9 @@ These are mostly for Clayton's memory...
 * `pip3 install --upgrade mackup --user`
 * `~/Library/Python/3.6/bin/mackup restore`
 
-And then you change your shell to zsh
+And then you change your shell to zsh or fish
 
-    chsh -s `which zsh`
+		chsh -s `which zsh`
+		chsh -s /usr/local/bin/fish
 
 Eventually `osx_defaults.sh` will get replaced with chef or puppet config....some day.

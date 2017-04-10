@@ -12,6 +12,9 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# Add z.sh - https://github.com/rupa/z
+. /usr/local/etc/profile.d/z.sh
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
