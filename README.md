@@ -23,6 +23,13 @@ Eventually `osx_defaults.sh` will get replaced with chef or puppet config....som
 # Brew stuff
 Most of this is pretty much from [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) but stored here so I don't have to look it up.
 
+### Install
+To install all packages in the Brewfile
+```bash
+brew bundle
+```
+
+
 ### Dump
 To backup current brew packages
 ```bash
@@ -30,9 +37,13 @@ brew bundle dump --force
 ```
 
 ### Cleanup
-This will remove all packages not in the brewfile
+This will remove all packages not in the Brewfile
 ```bash
 brew bundle cleanup --force
 ```
 
-
+### Remove all Brew packages
+This is rarely needed but is useful nevertheless
+```bash
+brew remove --force --ignore-dependencies $(brew list)
+```
