@@ -18,3 +18,21 @@ And then you change your shell to zsh or fish
 		chsh -s /usr/local/bin/fish
 
 Eventually `osx_defaults.sh` will get replaced with chef or puppet config....some day.
+
+
+# Brew stuff
+Most of this is pretty much from [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) but stored here so I don't have to look it up.
+
+### Dump
+To backup current brew packages
+```bash
+brew bundle dump --force
+```
+
+### Cleanup
+This will remove all packages not in the brewfile
+```bash
+brew bundle cleanup --force
+```
+
+
