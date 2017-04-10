@@ -24,7 +24,7 @@ Eventually `osx_defaults.sh` will get replaced with chef or puppet config....som
 Most of this is pretty much from [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) but stored here so I don't have to look it up.
 
 ### Install
-To install all packages in the Brewfile
+To install all packages in the Brewfile. Before you run this command you'll want to sign into the Mac AppStore. Or you can run the install command, fail on the mas, then do a `mas signin appleid@example.com password` and re-run the command below.
 ```bash
 brew bundle
 ```
