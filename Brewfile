@@ -33,6 +33,7 @@ brew 'wget'
 brew 'youtube-dl'
 brew 'z'
 brew 'burntsushi/ripgrep/ripgrep-bin'
+brew 'minio/stable/mc'
 brew 'minio/stable/minio'
 brew 'timsutton/formulae/brew-pkg'
 cask 'betterzipql'
@@ -48,6 +49,7 @@ mas 'Deckset', id: 847496013
 mas 'GarageBand', id: 682658836
 mas 'GIPHY CAPTURE', id: 668208984
 mas 'iMovie', id: 408981434
+mas 'Install macOS Sierra', id: 1127487414
 mas 'iPhoto', id: 408981381
 mas 'Keynote', id: 409183694
 mas 'Microsoft Remote Desktop', id: 715768417
