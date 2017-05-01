@@ -46,6 +46,8 @@ alias rr="/Applications/Recipe\ Robot.app/Contents/Resources/scripts/recipe-robo
 alias vim="/usr/local/bin/vim"
 alias vi="vim"
 alias v="vim"
+alias lsregister_fix="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user"
+
 
 # Docker aliases
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"

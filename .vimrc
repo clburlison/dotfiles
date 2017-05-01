@@ -2,13 +2,14 @@
 set background=dark
 colorscheme solarized
 
+
 " Settings -------------------------------------------------------------
 
 " Remap two semicolons to the escape key
 :imap ;; <Esc>
 
 " Change text color on misspelt words so we can see with our dark theme
-hi SpellBad ctermfg=000 guifg=#000000
+" hi SpellBad ctermfg=000 guifg=#000000
 " Increase history from 20 default to 1000
 set history=1000
 " Make Vim more useful
@@ -56,12 +57,16 @@ set cursorline
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
-" Highlight searches
-set hlsearch
-" Ignore case of searches
-set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
+
+
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+nnoremap <CR> :noh<CR><CR>      " This unsets the last search pattern register by hitting return
+
 " Always show status line
 set laststatus=2
 " Enable mouse in all modes
@@ -70,8 +75,8 @@ set mouse=a
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
-" Show the cursor position
-set ruler
+" Show the cursor position. Use CRTL-G
+" set ruler
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
@@ -95,11 +100,11 @@ set backupskip=/tmp/*,/private/tmp/*
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    :%s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 
@@ -107,16 +112,28 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+
+" Autocommand and tabs ------------------------------------------------
 " Indent smart
 filetype indent plugin on
 
-" Details on vim tabs/spacing - http://stackoverflow.com/a/1878983
-" Tabbing done right - http://stackoverflow.com/a/21323445
-" Only do this part when compiled with support for autocommands.
+" Automatic commands
 if has("autocmd")
+    " Enable file type detection
+    filetype on
+    " Enable spell check on markdown files
+    autocmd BufRead,BufNewFile *.md setlocal spell
+    " Enable spell check on git commit
+    autocmd FileType gitcommit setlocal spell
+"   " Treat .json files as .js
+"   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+    " Treat .md files as Markdown
+    autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+    " Details on vim tabs/spacing - http://stackoverflow.com/a/1878983
+    " Tabbing done right - http://stackoverflow.com/a/21323445
+    " Only do this part when compiled with support for autocommands.
     " Use filetype detection and file-based automatic indenting.
     filetype plugin indent on
-
     " Use actual tab chars in Makefiles.
     autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 endif
@@ -130,22 +147,11 @@ set shiftwidth=4    " Indents will have a width of 4.
 set softtabstop=4   " Sets the number of columns for a TAB.
 set expandtab       " Expand TABs to spaces.
 
-
-" Automatic commands
-" if has("autocmd")
-" 	" Enable file type detection
-" 	filetype on
-" 	" Enable spell check on markdown files
-" 	autocmd BufRead,BufNewFile *.md setlocal spell
-" 	" Treat .json files as .js
-" 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-" 	" Treat .md files as Markdown
-" 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
-" endif
+" Allow Shift+Tab to insert a real tab - http://stackoverflow.com/a/4781099/4811765
+:inoremap <S-Tab> <C-V><Tab>
 
 
-
-" Plugins -------------------------------------------------------------
+" Plugins --------------------------------------------------------------
 " Use :PlugInstall and :PlugUpdate
 call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
@@ -156,7 +162,7 @@ Plug 'vim-scripts/fish.vim',   { 'for': 'fish' }
 Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
 call plug#end()
 
-" Plugin Configuration -------------------------------------------------------------
+" Plugin Configuration -------------------------------------------------
 " synatastic plugin settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

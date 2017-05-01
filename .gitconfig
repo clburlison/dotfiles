@@ -159,20 +159,28 @@
 	insteadOf = "gist:"
 
 [credential]
-helper = osxkeychain
+	helper = osxkeychain
 
 [user]
 	name = Clayton Burlison
-	email = github@clburlison.com
+	email = git@clburlison.com
 	signingkey = ED91CD4E
 
 [push]
 	default = simple
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+
 [commit]
 	gpgsign = true
+	template = ~/.git-commit-template.txt
+	cleanup = strip
+
 [gpg]
 	program = /usr/local/bin/gpg
+
+[format]
+	signoff = true

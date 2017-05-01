@@ -6,8 +6,8 @@
 
 # Set custom paths
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/Dropbox/Config/User/bin:$PATH
-export PATH=$HOME/Dropbox/Config/User/bin/google-cloud-sdk/bin:$PATH
+export PATH=$HOME/bin:$PATH
+# export PATH=$HOME/Dropbox/Config/User/bin/google-cloud-sdk/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=$HOME/Library/Python/3.6/bin:$PATH
 export PATH=/usr/libexec:$PATH
