@@ -18,3 +18,12 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # added by travis gem
 [ -f /Users/clburlison/.travis/travis.sh ] && source /Users/clburlison/.travis/travis.sh
+
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+export GPG_TTY=$(tty)
+
+

@@ -1,3 +1,4 @@
+# http://haacked.com/archive/2014/07/28/github-flow-aliases/
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -175,7 +176,7 @@
 	smudge = git-lfs smudge %f
 
 [commit]
-	gpgsign = true
+    #gpgsign = true
 	template = ~/.git-commit-template.txt
 	cleanup = strip
 
@@ -184,3 +185,5 @@
 
 [format]
 	signoff = true
+[branch]
+	autosetuprebase = always
