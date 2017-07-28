@@ -13,7 +13,8 @@
 #fi
 
 # Set Default Editor
-export EDITOR="code"
+export EDITOR="vi"
+export VISUAL="code"
 
 # Set default blocksize for ls, df, du: http://hints.macworld.com/comment.php?mode=view&cid=24491
 export BLOCKSIZE=1k
