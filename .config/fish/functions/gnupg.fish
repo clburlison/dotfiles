@@ -15,16 +15,16 @@ function __refresh_gpg_agent_info -d "Re-load ~/.gpg-agent-info into environment
 end
 
 if not set -q -x GPG_AGENT_INFO
-	gpg-agent --daemon >/dev/null
+	gpg-agent --daemon >/dev/null 2>&1
 end
 
 if test -f ~/.gpg-agent-info
 	__refresh_gpg_agent_info
 
-	gpg-connect-agent /bye ^/dev/null
+	gpg-connect-agent /bye ^/dev/null 2>&1
 	if test $status -eq 1
-		pkill -U $USER gpg-agent
-		gpg-agent --daemon >/dev/null
+		pkill -U $USER gpg-agent 2>&1
+		gpg-agent --daemon >/dev/null 2>&1
 		__refresh_gpg_agent_info
 	end
 end

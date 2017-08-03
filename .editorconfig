@@ -32,6 +32,13 @@ mode = Python
 indent_style = space
 indent_size = 4
 
+#
+# Ruby
+#
+[*.rb]
+mode = Ruby
+indent_style = space
+indent_size = 2
 
 #
 # Puppet .pp files
