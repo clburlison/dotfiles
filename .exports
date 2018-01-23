@@ -31,7 +31,3 @@ export LC_ALL='en_US.UTF-8';
 
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
-
-# Go path for packages
-export GOPATH=$HOME/Dropbox/src/go
-export PATH=$GOPATH/bin:$PATH

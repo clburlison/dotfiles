@@ -29,6 +29,7 @@ alias g="git"
 alias fs="stat -f \"%z bytes\"" # File size
 alias e="$VISUAL"
 alias vi="vim" # macOS ships with a super old version of vim
+alias sha="shasum -a 256" # I almost always need 256 stop typing so much
 
 # Update Homebrew
 alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor"
